@@ -12,7 +12,7 @@ module ActiveRecord
         quote_without_simple_delegator(value, column)
       end
 
-      alias_method_chain :quote, :simple_delegator
+      prepend :quote, :simple_delegator
     end
   end
 end
